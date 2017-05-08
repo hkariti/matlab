@@ -1,0 +1,7 @@
+*.zip
+.*.swp
+*.out
+
+## Emacs stuff
+.projectile
+.dir-locals.el
