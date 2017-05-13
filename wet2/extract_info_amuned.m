@@ -6,6 +6,6 @@ downsampled_4 = bin_vec60(4:6:end);
 
 downsampled_unified = [ downsampled_2; downsampled_3; downsampled_4 ];
 downsampled_corrected = mode(downsampled_unified);
-info_bits = downsampled_corrected(2,9);
+info_bits = downsampled_corrected(2:9);
 end
 
