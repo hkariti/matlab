@@ -11,7 +11,7 @@ y_50_1 = y_n(50, R, C, tau1, t_vec1);
 y_50_2 = y_n(50, R, C, tau2, t_vec2);
 y_50_3 = y_n(50, R, C, tau3, t_vec3);
 
-figure();
+figure(1);
 subplot(3, 1, 1);
 plot(t_vec1, y_50_1);
 title(sprintf("Output for tau=%d", tau1));
