@@ -11,7 +11,7 @@ dial_vec = zeros(1, tone_samples*length(str) + silence_samples*(length(str)-1)+1
 % Start creating the samples vector and plot it as we go
 current_dial_index = 1;
 current_silence_index = 1;
-figure(1);
+figure();
 title("Signal for given string");
 xlabel("Time (1/10000 s)");
 ylabel("Voltage");

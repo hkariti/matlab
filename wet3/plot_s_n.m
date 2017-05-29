@@ -3,7 +3,7 @@ t_vec = linspace(-tau/2, tau/2);
 s1 = s_n(num1, tau, t_vec);
 s2 = s_n(num2, tau, t_vec);
 
-figure(1);
+figure();
 plot(t_vec, [s1; s2]);
 title("Fourier approx of square wave");
 xlabel("Time (sec)");

@@ -25,5 +25,9 @@ function [ ring_intervals ] = find_ring_intervals( samples )
     
     % Fill output matrix
     ring_intervals = [ transpose(silence_to_tone) transpose(tone_to_silence) ];
+    % Be on the safe side for empty value check in tests...
+    if (isempty(ring_intervals))
+        ring_intervals = [];
+    end
 end
 
