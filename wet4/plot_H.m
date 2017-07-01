@@ -10,5 +10,13 @@ H_phase = angle(H_vals);
 
 semilogx(s1, xspace, H_size);
 semilogx(s2, xspace, H_phase);
+title(s1, "Butterworth filter gain by frequency");
+xlabel(s1, "Frequency (Hz)");
+ylabel(s1, "Gain (dB)");
+title(s2, "Butterworth filter phase difference by frequency");
+xlabel(s2, "Frequency (Hz)");
+ylabel(s2, "Phase difference (rad)");
+grid(s1);
+grid(s2);
 end
 
