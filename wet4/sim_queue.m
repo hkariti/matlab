@@ -18,9 +18,7 @@ for incoming_task = 1:length(arrival_times)
         finish_cursor = finish_cursor + 1;
         next_queue_slot = next_queue_slot - 1;
         msg_in_queue = next_queue_slot - 2;
-        if (msg_in_queue >= 0)
-          task_end_time = new_time + service_times(queue(1));
-        end
+        task_end_time = new_time + queue(1);
     end
     if (msg_in_queue < 0 || arrival_times(incoming_task) <= task_end_time)
         new_time = arrival_times(incoming_task);
@@ -28,7 +26,7 @@ for incoming_task = 1:length(arrival_times)
             drop_times(drop_cursor) = new_time;
             drop_cursor = drop_cursor + 1;
         else
-            queue(next_queue_slot) = incoming_task;
+            queue(next_queue_slot) = service_times(incoming_task);
             if (msg_in_queue == -1)
                 task_end_time = new_time + service_times(incoming_task);
             end
@@ -42,7 +40,7 @@ for incoming_task = 1:next_queue_slot - 1
     if (incoming_task == 1)
         new_time = task_end_time;
     else
-        new_time = current_time + service_times(queue(incoming_task));
+        new_time = current_time + queue(incoming_task);
     end
     finish_times(finish_cursor) = new_time;
     finish_cursor = finish_cursor + 1;
